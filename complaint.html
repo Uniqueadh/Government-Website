@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Traffic Violations - Government of Nepal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo-left">
+                <img src="public/img/government logo.png" class="gov-logo">
+            </div>
+            <div class="header-title">
+                <h1>नेपाल सरकार</h1>
+                <p>Government of Nepal – Official Portal</p>
+            </div>
+            <div class="logo-right">
+                <img src="public/img/nepal flag.png" class="nepal-flag">
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-wrapper">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="ministries.html">Ministries</a></li>
+                <li><a href="services.html">E-Services</a></li>
+                <li><a href="notices.html">Notices</a></li>
+                <li><a href="complaint.html" class="active">Report Violations</a></li>
+                <li><a href="document.html">Documents</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Hero -->
+<section class="page-hero" style="background-image: url('public/img/Traffic-checking.jpg');">
+    <div class="page-hero-overlay"></div>
+    <h1>Report Traffic Violations</h1>
+</section>
+
+<!-- Complaint Form Section -->
+<section class="page-content">
+    <div class="container">
+        <div class="content-section">
+            <h2>Submit Complaint</h2>
+            <p>Please provide details about the traffic violation and upload a photo as proof.</p>
+
+            <!-- Auto-Resize Jotform Embed -->
+            <div id="jotform-container" style="width: 100%; min-height: 900px; margin-bottom: 40px;">
+    <iframe
+        id="jotformIframe"
+        title="Traffic Violation Complaint Form"
+        src="https://form.jotform.com/253335093478059"
+        style="width: 100%; min-height: 900px; border: none; overflow: hidden;"
+        frameborder="0"
+        scrolling="no">
+    </iframe>
+</div>
+
+<script>
+window.addEventListener("message", function(e) {
+    if (typeof e.data === "string") {
+        let data = e.data.split(":");
+
+        if (data[0] === "setHeight") {
+            let height = parseInt(data[1]) + 100; // extra padding so footer is not blocked
+            document.getElementById("jotformIframe").style.height = height + "px";
+            document.getElementById("jotform-container").style.minHeight = height + "px";
+        }
+    }
+});
+</script>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2025 Government of Nepal</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
